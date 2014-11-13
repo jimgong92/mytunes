@@ -18,12 +18,16 @@ var SongQueue = Songs.extend({
   enqueue: function(song){
     this.push(song);
   },
+
   dequeue: function(){
     this.shift();
   },
 
   playFirst: function(){
     this.at(0).play();
+  },
+  removeFromQueue: function(song) {
+    this.remove(song, 'silent');
   }
 
 });
